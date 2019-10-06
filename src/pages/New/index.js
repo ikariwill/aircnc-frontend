@@ -13,7 +13,7 @@ export default function New({ history }) {
 
   const preview = useMemo(
     () => (thumbnail ? URL.createObjectURL(thumbnail) : null),
-    [thumbnail]
+    [thumbnail],
   );
 
   async function handleSubmit(event) {
@@ -28,7 +28,7 @@ export default function New({ history }) {
     data.append('price', price);
 
     await api.post('/spots', data, {
-      headers: { user_id }
+      headers: { user_id },
     });
 
     history.push('/dashboard');
